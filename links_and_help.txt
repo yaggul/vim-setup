@@ -1,0 +1,22 @@
+#installing pathogen
+https://github.com/tpope/vim-pathogen
+
+#command
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe.pathogen.vim
+
+
+#installing vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+#install command
+from vim run:
+:VundleInstall
+
+#installing jedi-vim
+
+cd ~/.vim/bundle/ && git clone --recursive https://github.com/davidhalter/jedi-vim.git
+
+all else in .vimrc
+
+
