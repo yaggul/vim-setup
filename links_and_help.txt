@@ -22,3 +22,6 @@ all else in .vimrc
 
 #compile vim with python3 support
 http://www.xorpd.net/blog/vim_python3_install.html
+
+#vim source 
+https://github.com/vim/vim
