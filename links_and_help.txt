@@ -20,3 +20,5 @@ cd ~/.vim/bundle/ && git clone --recursive https://github.com/davidhalter/jedi-v
 all else in .vimrc
 
 
+#compile vim with python3 support
+http://www.xorpd.net/blog/vim_python3_install.html
