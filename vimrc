@@ -1,5 +1,11 @@
 execute pathogen#infect()
-let g:jedi#setup_py_version = 3
+let g:jedi#auto_initialization = 1
+let g:jedi#force_py_version = 3
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = "0"
+let g:jedi#completions = 0
+
 
 colorscheme evening_2
 set ruler
@@ -17,20 +23,6 @@ set autoindent
 set fileformat=unix
 
 
-
-"au BufNewFile,BufRead *.py
-"   \ set tabstop=4
-"   \ set softtabstop=4
-"   \ set shiftwidth=4
-"   \ set textwidth=79
-"   \ set expandtab
-"   \ set autoindent
-"   \ set fileformat=unix
-
-"au BufNewFile,BufRead *.js, *.html, *.css
-"   \ set tabstop=2
-"   \ set softtabstop=2
-"   \ set shiftwidth=2
 
 
 set nohlsearch
@@ -51,17 +43,19 @@ set cmdheight=2
 
 set number
 set nocompatible
-"filetype off
-"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-set encoding=utf-8
+
+
+set fileencodings=utf-8,cp1251,kio8-r,cp866,cp1252
 
 
 set rtp+=~/.vim/bundle/Vundle.vim
 
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
@@ -74,7 +68,6 @@ Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'derekwyatt/vim-scala'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'terryma/vim-expand-region'
@@ -83,7 +76,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'kana/vim-textobj-user'
 Plugin 'bps/vim-textobj-python'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'vim-airline/vim-airline'
+
 
 call vundle#end()
 
@@ -101,7 +95,7 @@ import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
     project_base_dir = os.environ['VIRTUAL_ENV']
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    activate_this = os.path.join(project_base_dir,'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 
